@@ -6,35 +6,35 @@ function _easy_eel_display_prompt_section_git_state
 
     echo -n "on "
 
-    set -q EASY_EEL_GIT_BRANCH_COLOR; or set -l EASY_EEL_GIT_BRANCH_COLOR purple
-    _easy_eel_colored_print $EASY_EEL_GIT_BRANCH_COLOR (_git_branch_name)
+    set -q EASY_EEL_COLOR_GIT_BRANCH; or set -l EASY_EEL_COLOR_GIT_BRANCH purple
+    _easy_eel_colored_print $EASY_EEL_COLOR_GIT_BRANCH (_git_branch_name)
     echo -n ' '
 
     set -l state (_easy_eel_print_git_state)
-    set -q EASY_EEL_GIT_STATE_COLOR; or set -l EASY_EEL_GIT_STATE_COLOR blue
-    _easy_eel_colored_print $EASY_EEL_GIT_STATE_COLOR "[$state]"
+    set -q EASY_EEL_COLOR_GIT_STATE; or set -l EASY_EEL_COLOR_GIT_STATE blue
+    _easy_eel_colored_print $EASY_EEL_COLOR_GIT_STATE "[$state]"
 end
 
 function _easy_eel_print_git_state
-    set -q EASY_EEL_GIT_DIRTYSTATE; or set -l EASY_EEL_GIT_DIRTYSTATE '!'
-    set -q EASY_EEL_GIT_UNTRACKED; or set -l EASY_EEL_GIT_UNTRACKED '☡'
-    set -q EASY_EEL_GIT_STASH; or set -l EASY_EEL_GIT_STASH '↩'
-    set -q EASY_EEL_GIT_CLEAN; or set -l EASY_EEL_GIT_CLEAN '✓'
+    set -q EASY_EEL_SYMBOL_GIT_DIRTY; or set -l EASY_EEL_SYMBOL_GIT_DIRTY '!'
+    set -q EASY_EEL_SYMBOL_GIT_UNTRACKED; or set -l EASY_EEL_SYMBOL_GIT_UNTRACKED '☡'
+    set -q EASY_EEL_SYMBOL_GIT_STASH; or set -l EASY_EEL_SYMBOL_GIT_STASH '↩'
+    set -q EASY_EEL_SYMBOL_GIT_CLEAN; or set -l EASY_EEL_SYMBOL_GIT_CLEAN '✓'
 
     set -l result
 
     if _git_is_touched
-        set result $EASY_EEL_GIT_DIRTYSTATE
+        set result $EASY_EEL_SYMBOL_GIT_DIRTY
     else
-        set result $EASY_EEL_GIT_CLEAN
+        set result $EASY_EEL_SYMBOL_GIT_CLEAN
     end
 
     if _git_has_untracked
-        set result "$result$EASY_EEL_GIT_UNTRACKED"
+        set result "$result$EASY_EEL_SYMBOL_GIT_UNTRACKED"
     end
 
     if _git_is_stashed
-        set result "$result$EASY_EEL_GIT_STASH"
+        set result "$result$EASY_EEL_SYMBOL_GIT_STASH"
     end
 
     set -l git_ahead_behind_diverged (_git_ahead_behind)

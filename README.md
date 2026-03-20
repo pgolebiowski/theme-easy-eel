@@ -28,7 +28,7 @@ Easy Eel provides two distinct avenues for personalization:
 
 2. **Override Functions.** When you wish to modify the theme's behavior or replace entire prompt sections, these functions come into play. When defined, they will override Easy Eel's defaults for the associated prompt segment.
 
-<img src="https://github.com/pgolebiowski/theme-easy-eel/assets/7394091/e19ef564-62fa-4f85-88b6-32a9ed306c68" alt="Showcasing the use of an override function to replace the default user name. Here, the `easy_eel_user_override` function is defined to change the user name to 'Dockside Dave' in the prompt." width="75%">
+<img src="https://github.com/pgolebiowski/theme-easy-eel/assets/7394091/e19ef564-62fa-4f85-88b6-32a9ed306c68" alt="Showcasing the use of an override function to replace the default user name. Here, the `easy_eel_override_user` function is defined to change the user name to 'Dockside Dave' in the prompt." width="75%">
 
 ## 📚 Documentation
 
@@ -45,45 +45,45 @@ Easy Eel provides two distinct avenues for personalization:
 
 ### Prompt Sections
 
-#### User 
+#### User
 
 - **Purpose**: Display the current user.
-- **Color**: `EASY_EEL_USER_COLOR` (default: `brred`)
-- **Override**: `easy_eel_user_override`
+- **Color**: `EASY_EEL_COLOR_USER` (default: `brred`)
+- **Override**: `easy_eel_override_user`
 - **Toggle**: `EASY_EEL_HIDE_USER`
 
 #### Host
 
 - **Purpose**: Show hostname. Different style for SSH sessions.
-- **Default Color**: `EASY_EEL_HOST_DEFAULT_COLOR` (default: `yellow`)
-- **SSH Color**: `EASY_EEL_HOST_SSH_COLOR` (default: `--bold red`)
-- **Override**: `easy_eel_host_override`
+- **Default Color**: `EASY_EEL_COLOR_HOST_DEFAULT` (default: `yellow`)
+- **SSH Color**: `EASY_EEL_COLOR_HOST_SSH` (default: `--bold red`)
+- **Override**: `easy_eel_override_host`
 - **Toggle**: `EASY_EEL_HIDE_HOST`
 
 #### Current Directory
 
 - **Purpose**: Reveal current directory.
-- **Color**: `EASY_EEL_CURRENT_DIRECTORY_COLOR` (default: `green`)
-- **Override**: `easy_eel_current_directory_override`
+- **Color**: `EASY_EEL_COLOR_CURRENT_DIRECTORY` (default: `green`)
+- **Override**: `easy_eel_override_current_directory`
 - **Toggle**: `EASY_EEL_HIDE_CURRENT_DIRECTORY`
 
-#### Git 
+#### Git
 
 - **Purpose**: Displays the Git branch name and repository state.
 - **Variables:**
-  - `EASY_EEL_GIT_BRANCH_COLOR` (default: `purple`)
-  - `EASY_EEL_GIT_STATE_COLOR` (default: `blue`)
-  - `EASY_EEL_GIT_DIRTYSTATE` (default: `!`)
-  - `EASY_EEL_GIT_UNTRACKED` (default: `☡`)
-  - `EASY_EEL_GIT_STASH` (default: `↩`)
-  - `EASY_EEL_GIT_CLEAN` (default: `✓`)
+  - `EASY_EEL_COLOR_GIT_BRANCH` (default: `purple`)
+  - `EASY_EEL_COLOR_GIT_STATE` (default: `blue`)
+  - `EASY_EEL_SYMBOL_GIT_DIRTY` (default: `!`)
+  - `EASY_EEL_SYMBOL_GIT_UNTRACKED` (default: `☡`)
+  - `EASY_EEL_SYMBOL_GIT_STASH` (default: `↩`)
+  - `EASY_EEL_SYMBOL_GIT_CLEAN` (default: `✓`)
 - **Toggle**: `EASY_EEL_HIDE_GIT_STATE`
 
-#### Prompt Indicator 
+#### Prompt Indicator
 
 - **Purpose**: Indicates where the user can start typing commands. Color changes based on the outcome of the previous command.
 - **Variables:**
-  - `EASY_EEL_PROMPT_INDICATOR_SYMBOL` (default: `↪ `)
+  - `EASY_EEL_SYMBOL_PROMPT_INDICATOR` (default: `↪ `)
   - `EASY_EEL_COLOR_PROMPT_NORMAL` (default: `normal`)
   - `EASY_EEL_COLOR_ERROR` (default: `red`)
 

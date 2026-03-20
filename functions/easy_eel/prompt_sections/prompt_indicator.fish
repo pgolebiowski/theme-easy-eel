@@ -1,9 +1,9 @@
 source (dirname (realpath (status --current-filename)))/../colors.fish
 
 function _easy_eel_display_prompt_indicator -a previous_command_status
-    set -q EASY_EEL_PROMPT_INDICATOR_SYMBOL; or set -l EASY_EEL_PROMPT_INDICATOR_SYMBOL "↪ "
+    set -q EASY_EEL_SYMBOL_PROMPT_INDICATOR; or set -l EASY_EEL_SYMBOL_PROMPT_INDICATOR "↪ "
     set -l color (_easy_eel_determine_prompt_color $previous_command_status)
-    _easy_eel_colored_print $color $EASY_EEL_PROMPT_INDICATOR_SYMBOL
+    _easy_eel_colored_print $color $EASY_EEL_SYMBOL_PROMPT_INDICATOR
 end
 
 function _easy_eel_determine_prompt_color -a previous_command_status

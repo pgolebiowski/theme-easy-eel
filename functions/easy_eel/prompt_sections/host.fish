@@ -6,19 +6,19 @@ function _easy_eel_display_prompt_section_host
 end
 
 function _easy_eel_determine_host_color
-    set -q EASY_EEL_HOST_DEFAULT_COLOR; or set -l EASY_EEL_HOST_DEFAULT_COLOR yellow
-    set -q EASY_EEL_HOST_SSH_COLOR; or set -l EASY_EEL_HOST_SSH_COLOR "--bold red"
+    set -q EASY_EEL_COLOR_HOST_DEFAULT; or set -l EASY_EEL_COLOR_HOST_DEFAULT yellow
+    set -q EASY_EEL_COLOR_HOST_SSH; or set -l EASY_EEL_COLOR_HOST_SSH "--bold red"
 
     if test $SSH_TTY
-        echo $EASY_EEL_HOST_SSH_COLOR
+        echo $EASY_EEL_COLOR_HOST_SSH
     else
-        echo $EASY_EEL_HOST_DEFAULT_COLOR
+        echo $EASY_EEL_COLOR_HOST_DEFAULT
     end
 end
 
 function _easy_eel_host
-    if functions -q easy_eel_host_override
-        easy_eel_host_override
+    if functions -q easy_eel_override_host
+        easy_eel_override_host
         return
     end
 
