@@ -6,10 +6,10 @@ Dive into a minimalistic command line experience with Easy Eel for the Fish shel
 
 ## 🎣 Getting started
 
-With [Fish Shell](https://fishshell.com) and [Oh My Fish](https://github.com/oh-my-fish/oh-my-fish) installed, simply run:
+With [Fish Shell](https://fishshell.com) and [Fisher](https://github.com/jorgebucaran/fisher) installed, simply run:
 
 ```sh
-omf install https://github.com/pgolebiowski/theme-easy-eel
+fisher install pgolebiowski/theme-easy-eel
 ```
 
 ## 🌟 Features
