@@ -32,6 +32,8 @@ function _easy_eel_display_prompt_section_git_state
     set -q EASY_EEL_SYMBOL_GIT_CLEAN; or set -l EASY_EEL_SYMBOL_GIT_CLEAN '✓'
     set -q EASY_EEL_SYMBOL_GIT_UNTRACKED; or set -l EASY_EEL_SYMBOL_GIT_UNTRACKED '☡'
     set -q EASY_EEL_SYMBOL_GIT_STASH; or set -l EASY_EEL_SYMBOL_GIT_STASH '↩'
+    set -q EASY_EEL_SYMBOL_GIT_AHEAD; or set -l EASY_EEL_SYMBOL_GIT_AHEAD '+'
+    set -q EASY_EEL_SYMBOL_GIT_BEHIND; or set -l EASY_EEL_SYMBOL_GIT_BEHIND '-'
 
     # Colors
     set -q EASY_EEL_COLOR_GIT_BRANCH; or set -l EASY_EEL_COLOR_GIT_BRANCH purple
@@ -40,8 +42,8 @@ function _easy_eel_display_prompt_section_git_state
     # Build state
     set -l state (test $dirty -eq 1; and echo $EASY_EEL_SYMBOL_GIT_DIRTY; or echo $EASY_EEL_SYMBOL_GIT_CLEAN)
     test $untracked -eq 1; and set state "$state$EASY_EEL_SYMBOL_GIT_UNTRACKED"
-    test $ahead -eq 1; and set state "$state↑"
-    test $behind -eq 1; and set state "$state↓"
+    test $ahead -eq 1; and set state "$state$EASY_EEL_SYMBOL_GIT_AHEAD"
+    test $behind -eq 1; and set state "$state$EASY_EEL_SYMBOL_GIT_BEHIND"
     test $stashed -eq 1; and set state "$state$EASY_EEL_SYMBOL_GIT_STASH"
 
     # Display
