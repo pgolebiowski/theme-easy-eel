@@ -19,7 +19,7 @@ function _easy_eel_display_prompt_section_git_state
                 string match -rq ' -[1-9]' $line; and set behind 1
             case '1 *' '2 *'
                 set dirty 1
-            case '\? *'
+            case '? *'
                 set untracked 1
         end
     end
